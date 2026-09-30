@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>2,317 Donors & The Long Arc of Alumni Giving (2010–2015)</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles (all colors, sizes and spacing live here) -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===================== HERO ===================== -->
+  <header class="hero">
+    <h1>2,317 Donors &amp; The Long Arc of Alumni Giving (2010–2015)</h1>
+    <p class="hero-sub">Six years of gifts to one university, told one chart at a time.</p>
+    <p class="scroll-cue">Scroll to begin</p>
+  </header>
+
+  <!-- ============ CHAPTER 1: THE ANATOMY OF GROWTH ============ -->
+  <section class="scrolly" id="ch1">
+
+    <!-- Right side: the sticky chart -->
+    <figure class="graphic" id="chart">
+      <figcaption class="chart-head">
+        <!-- One title block per chart. JavaScript shows the one whose data-for matches the current step. -->
+        <div class="chart-titles">
+          <div class="chart-title-block" data-for="swarm">
+            <h2 class="chart-title">The Anatomy of Growth: $24.7M raised, up 45% since 2010</h2>
+            <p class="chart-sub">Each bubble is one college’s giving to one allocation type, sized by total amount</p>
+          </div>
+          <div class="chart-title-block" data-for="bars">
+            <h2 class="chart-title">Steady Growth of Consistent Mix</h2>
+            <p class="chart-sub"><span class="c-sch">Scholarship</span> funding has held 41–45% of total giving every year since 2010</p>
+          </div>
+          <div class="chart-title-block" data-for="ring">
+            <h2 class="chart-title">The Weight of Every Gift</h2>
+            <p class="chart-sub">Each dot is one donor, largest giver first; share of the circle = share of the dollars. Color shows where most of a donor’s money went (30% of donors gave to more than one allocation).</p>
+          </div>
+          <div class="chart-title-block" data-for="colleges">
+            <h2 class="chart-title">Number of Donors by College Split by Allocation Type</h2>
+            <p class="chart-sub">Number of donors giving to each allocation. A donor who gave to more than one allocation is counted in each.</p>
+          </div>
+          <div class="chart-title-block" data-for="subcats">
+            <h2 class="chart-title">Allocation Subcategory by Gift Amount</h2>
+            <p class="chart-sub">Each circle is one fund or program, sized by dollars raised and grouped by allocation. College names inside Scholarship are college-designated scholarships.</p>
+          </div>
+          <div class="chart-title-block" data-for="credits">
+            <h2 class="chart-title">Credits</h2>
+            <p class="chart-sub">Thank you for scrolling.</p>
+          </div>
+        </div>
+        <!-- Legend: hover or focus an item to highlight that allocation -->
+        <ul class="legend" aria-label="Gift allocation">
+          <li><button type="button" data-key="Scholarship"><span class="swatch sch"></span>Scholarship</button></li>
+          <li><button type="button" data-key="Endowment"><span class="swatch end"></span>Endowment</button></li>
+          <li><button type="button" data-key="Campus Resource"><span class="swatch cam"></span>Campus Resource</button></li>
+        </ul>
+      </figcaption>
+      <svg id="chart-svg" role="img"
+           aria-label="Gift totals by year and allocation type, 2010 to 2015"></svg>
+      <div class="tooltip" id="tooltip" hidden></div>
+
+      <!-- CREDITS: the title (data-title) is spelled out by particles in the chart;
+           the lines below assemble one by one after it. Edit the text here. -->
+      <div class="credits" id="credits"
+           data-title="2,317 Donors & The Long Arc of Alumni Giving (2010–2015)">
+        <p class="credit-line">
+          This data story recreates the original Tableau Public dashboard by
+          Urmimala Mandal, using the same data.
+        </p>
+        <p class="credit-line">
+          <a class="credit-button" target="_blank" rel="noopener"
+             href="https://public.tableau.com/app/profile/urmimala.mandal/viz/2317DonorsTheLongArcofAlumniGiving20102015/Dashboard24">
+            View the original dashboard on Tableau Public →</a>
+        </p>
+        <p class="credit-line">
+          Created by Urmimala Mandal. Design, chart choices, narrative and refinement
+          led by Urmimala Mandal, with coding heavily assisted by Claude (Anthropic).
+        </p>
+        <p class="credit-line">Built with D3.js, HTML, CSS and JavaScript.</p>
+        <p class="credit-line">
+          Scroll animations powered by <strong>Scrollama</strong>, a small JavaScript
+          library that triggers each chart’s animation as its text scrolls into view.
+          <a target="_blank" rel="noopener" href="https://github.com/russellsamora/scrollama">Learn about Scrollama →</a>
+        </p>
+      </div>
+    </figure>
+
+    <!-- Left side: the scrolling text steps -->
+    <div class="steps">
+
+      <!-- STEP 1: data-mode="swarm" tells main.js to show the beeswarm -->
+      <article class="step" data-mode="swarm">
+        <p>
+          A total of <span class="hl">$24.7M</span> was raised across
+          <span class="hl">3,913</span> gifts between <strong>2010</strong> and
+          <strong>2015</strong>, growing <span class="hl">45%</span> over the period.
+        </p>
+      </article>
+
+      <!-- STEP 2: data-mode="bars" tells main.js to build the stacked bars -->
+      <article class="step" data-mode="bars">
+        <p>
+          <span class="c-sch">Scholarship</span> funding consistently led allocation,
+          holding <span class="hl">41–45%</span> of total giving every year.
+        </p>
+        <p>
+          The totals swung hard. Giving fell <span class="hl">21%</span> in 2012, then
+          jumped <span class="hl">59%</span> to $5.05M in 2013. In both swings all three
+          allocations moved together, so the mix hardly changed.
+        </p>
+        <p>
+          <span class="c-end">Endowment</span> held second place at 34–39%, and
+          <span class="c-cam">Campus Resource</span> took the remaining 16–22%.
+        </p>
+      </article>
+
+      <!-- STEP 3: data-mode="ring" tells main.js to build the donor ring -->
+      <article class="step" data-mode="ring">
+        <p>
+          Giving is broad-based rather than concentrated. It takes
+          <span class="hl">1,168</span> of <span class="hl">2,317</span> donors,
+          roughly half the base, to account for <span class="hl">80%</span> of all dollars raised.
+        </p>
+        <p>
+          The Pareto rule says about 20% of donors usually bring in 80% of the money.
+          Here the top 20% (463 donors) gave just <span class="hl">49%</span>.
+        </p>
+        <p>
+          The biggest givers spread across the first 80% of the ring, while the
+          other 1,149 donors crowd into the last fifth.
+        </p>
+      </article>
+
+      <!-- STEP 4: data-mode="colleges" tells main.js to build the college bars -->
+      <article class="step" data-mode="colleges">
+        <p>
+          Reach extends across all <span class="hl">12</span> colleges, with
+          <strong>Natural Science</strong> and <strong>Arts &amp; Sciences</strong>
+          drawing the widest donor base.
+        </p>
+        <p>
+          Together those two hold <span class="hl">40%</span> of all donors
+          (932 of 2,317), and the top four colleges hold <span class="hl">70%</span>.
+        </p>
+        <p>
+          A bigger base doesn’t mean bigger gifts, though. In every college the average
+          donor gave between $8.5K (Communication Arts and Sciences) and $12.5K (Education).
+        </p>
+      </article>
+
+      <!-- STEP 5: data-mode="subcats" tells main.js to build the packed circles -->
+      <article class="step" data-mode="subcats">
+        <p>
+          Giving itself flows through a mix of named funds and college-designated
+          scholarships alike: <span class="hl">25</span> destinations in all.
+        </p>
+        <p>
+          <span class="c-end">Endowment</span> is the most concentrated. Just four funds hold
+          <span class="hl">37%</span> of every dollar, led by the Diversity Fund at $2.66M,
+          the single largest destination.
+        </p>
+        <p>
+          <span class="c-sch">Scholarship</span> is the most spread out, split across 12 colleges
+          and two named funds. <span class="c-cam">Campus Resource</span> is the most even:
+          its seven programs each drew between $594K and $793K.
+        </p>
+      </article>
+
+      <!-- STEP 6: data-mode="credits" shows the credits in the chart area -->
+      <article class="step step-notes" data-mode="credits">
+        <p class="step-kicker">About this data</p>
+        <p>
+          This story uses the Tableau Public sample dataset “University Advancement,
+          Donations, and Giving.” The data is fictitious and made for training purposes:
+          no real donors, gifts or university are represented.
+        </p>
+        <p>
+          It covers 3,913 gift records from 2010 to 2015. Dollar figures in the text are
+          rounded, and every number was checked against the raw data.
+        </p>
+        <p>
+          One counting note: 698 donors gave to more than one allocation, so donor counts
+          split by allocation add up to more than 2,317.
+        </p>
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="notes">
+    <p>Data: Tableau Public sample dataset “University Advancement, Donations, and Giving” (fictitious). Created by Urmimala Mandal.</p>
+  </footer>
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/scrollama@3.2.0/build/scrollama.min.js"></script>
+  <!-- Our code -->
+  <script src="js/main.js"></script>
+</body>
+</html>
